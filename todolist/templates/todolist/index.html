@@ -5,6 +5,8 @@
             <tr>
                 <th>Task</th>
                 <th>Detail of that Task</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -12,6 +14,9 @@
             <tr>
                 <td class="table">{{task.title}}</td>
                 <td class="table">{{task.description}}</td>
+                <td><a href= "{% url 'edit' task.uu_id %}">edit</a></td>
+                <td><a href= "{% url 'delete' task.uu_id %}">Delete</a></td>
+                
             </tr>
             {% endfor %}
         </tbody>
