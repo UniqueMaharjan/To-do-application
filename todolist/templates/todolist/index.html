@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Detail of that Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in task %}
+            <tr>
+                <td class="table">{{task.title}}</td>
+                <td class="table">{{task.description}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href = "{% url 'tasks' %}"><input type="submit" value="ADD"></a>
+{% endblock %}
