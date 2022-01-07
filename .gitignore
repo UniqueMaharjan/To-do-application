@@ -1,0 +1,4 @@
+media/images
+env
+todolist/migrations
+db.sqlite3

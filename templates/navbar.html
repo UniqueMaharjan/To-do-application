@@ -1,8 +1,18 @@
-<nav>
-    <h1>TO DO APP</h1>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="{% url 'aboutus' %}">About Us</a></li>
-        <hr>
-    </ul>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+	<a href="{% url 'home'%}" class="navbar-brand"><i class="fa fa-cube"></i>My<b>TodoS</b></a> 
+		<div class="navbar-nav ml-auto">
+			<div class="nav-item dropdown">
+				<a href="{% url 'editprofile' %}" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="{{request.user.photo.url}}" class="avatar" alt="Avatar">{{request.user.username}}<b class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a href="{% url 'editprofile' %}" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+					<div class="divider dropdown-divider"></div>
+                    {% if request.user.is_authenticated %}
+						<a href="{%url 'logout'%}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+                    {% else %}
+						<a href="{% url 'login'%}" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Login</a>
+                    {% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
 </nav>

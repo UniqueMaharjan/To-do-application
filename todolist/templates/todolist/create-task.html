@@ -1,0 +1,63 @@
+{% extends 'main.html'%}
+{% block content %}
+<div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+    <!-- App title section -->
+    <div class="row m-1 p-4">
+      <div class="col">
+        <div
+          class="p-1 h1 text-primary text-center mx-auto display-inline-block"
+        >
+          <i class="fa fa-check bg-primary text-white rounded p-2"></i>
+          <u>My Todo-s</u>
+        </div>
+      </div>
+      <h5>Completed Task: {{completed}}/{{uncompleted}}</h5>
+    </div>
+{% if page == "edit"%}
+<form action = " " method = "POST">
+    {% csrf_token %}
+    <div class="row m-1 p-3">
+        <div class="col col-11 mx-auto">
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col">
+                    <lable>Task: </lable>
+                    {{form.task}}
+                    <br>
+                    <lable>Completed: </lable>
+                    {{form.completed}}
+                </div>
+                
+                <div class="col-auto px-0 mx-0 mr-2">
+                    <input type="submit" class = "btn btn-primary" value="Add">
+                    <a class = "btn btn-primary" href = "{{request.META.HTTP_REFERER}}">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+</form>
+{% else %}
+<form action = " " method = "POST">
+    {% csrf_token %}
+    <div class="row m-1 p-3">
+        <div class="col col-11 mx-auto">
+            <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                <div class="col">
+                    <lable>Task: </lable>
+                    {{form.task}}
+                </div>
+                
+                <div class="col-auto px-0 mx-0 mr-2">
+                    <input type="submit" class = "btn btn-primary" value="Add">
+                    <a class = "btn btn-primary" href = "{{request.META.HTTP_REFERER}}">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+</form>
+{%endif%}
+{% endblock content%}
+
+
+

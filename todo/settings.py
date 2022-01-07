@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'todolist.User'
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,6 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [BASE_DIR/'static',]
+
+MEDIA_ROOT = BASE_DIR/'media/images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
