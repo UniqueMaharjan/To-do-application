@@ -30,6 +30,8 @@ def logoutUser(request):
     return redirect('login')
 
 def registerUser(request):
+    if request.user.is_authenticated:
+        return redirect('home')
     form = UserCreation()
     if request.method == "POST":
         form = UserCreation(request.POST)

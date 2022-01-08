@@ -41,3 +41,10 @@ body {
 	height: 36px;
 	margin-right: 10px;
 }
+.outer-footer{
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  background-color: #3f3f3f;
+}
