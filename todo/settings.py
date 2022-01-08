@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import dotenv
+dotenv.load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["mytodosapp12.herokuapp.com","localhost"]
+ALLOWED_HOSTS = ["mytodosapp12.herokuapp.com","localhost",'*']
 
 AUTH_USER_MODEL = 'todolist.User'
 # Application definition
@@ -127,6 +128,7 @@ STATICFILES_DIRS = [BASE_DIR/'static',]
 
 MEDIA_ROOT = BASE_DIR/'media/images'
 STATIC_ROOT = BASE_DIR/'staticfiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
